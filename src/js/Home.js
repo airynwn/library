@@ -1,14 +1,20 @@
 import React from 'react';
 import Folder from './Folder.js';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 
 
 function Header() {
     return (
-        <div>
-            <h1 style={{display: "flex", justifyContent: "center"}}>Header</h1>
-            {/* <img src={'src/img/header-test.png'} /> */}
-        </div>
+        <Row>
+            <Col>
+                <h1>Header</h1>
+                {/* <img src={'src/img/header-test.png'} /> */}
+            </Col>
+        </Row>
     );
 }
 
@@ -17,26 +23,31 @@ function Header() {
 
 function Navbar() {
     return (
-        <div style={{display: "flex", justifyContent: "space-evenly"}}>
-            <div>
-                manage
-            </div>
-            <div>
-                customize
-            </div>
-            <div>
-                search
-            </div>
-            <div>
-                login(?)
-            </div>
-        </div>
+        <Nav fill variant="tabs" defaultActiveKey="/home" className="flex-column flex-lg-row">
+      <Nav.Item>
+        <Nav.Link href="">Home</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link href="">Manage</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link href="">Customize</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link eventKey="disabled" disabled>Search</Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
+        <Nav.Link eventKey="disabled" disabled>
+          Login
+        </Nav.Link>
+      </Nav.Item>
+    </Nav>
     );
 }
 
 export default function Home() {
     return (
-        <>
+        <Container fluid>
             <Header />
             <hr />
             <Navbar />
@@ -46,6 +57,6 @@ export default function Home() {
                 <Folder id='2' title='Test2' />
             </div>
             <Button variant="outline-primary">Test</Button>{' '}
-        </>
+        </Container>
     );
 }
