@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 
-
 function Header() {
     return (
         <Row>
@@ -18,8 +17,6 @@ function Header() {
     );
 }
 
-// * create = ( + )
-// ! delete = ( x )
 
 function Navbar() {
     return (
@@ -44,6 +41,10 @@ function Navbar() {
     </Nav>
     );
 }
+
+
+// TODO: self-referencing relationship / recursive relationship:
+// --    folder: title, icon, (...), parent_id references folder(id) nullable
 
 export default function Home() {
     return (
