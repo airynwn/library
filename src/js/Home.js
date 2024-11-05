@@ -52,11 +52,19 @@ export default function Home() {
             <hr />
             <Navbar />
             <hr />
-            <div>
+            <Row>
+              <Col>
                 <Folder id='1' title='Test' />
+              </Col>
+              <Col>
                 <Folder id='2' title='Test2' />
-            </div>
-            <Button variant="outline-primary">Test</Button>{' '}
+              </Col>
+            </Row>
+            <Row>
+              <Col className="d-flex justify-content-center">
+                <Button variant="outline-primary">Test</Button>{' '}
+              </Col>
+            </Row>
         </Container>
     );
 }
