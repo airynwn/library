@@ -1,3 +1,15 @@
+## Progress
+
+**Day 1**
+
+* ERD
+* Basic home preview
+* React Bootstrap
+
+**Day 2**
+
+* Home mockup
+
 ## TODO
 
 * [ ] `Folder` should be a self-referencing table
