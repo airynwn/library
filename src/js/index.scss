@@ -1,3 +1,74 @@
-h1 {
-    color: teal;
+$body: #3d3f4b;
+// $light-purple: #bbaec4;
+$light-purple: #b599ca;
+$nav-dark: #34313e;
+
+body {
+    background: $body;
+    color: white;
+    overflow-y: hidden;
+}
+
+.icon {
+    width: 96px;
+    height: 96px;
+}
+
+.nav {
+    background: $nav-dark;
+    &-link {
+        color: white;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            transition: transform 0.25s ease-out;
+            transform-origin: bottom center;
+        }
+        &:hover, &:focus {
+            color: $light-purple;
+            &::after {
+                transform: scaleX(1);
+                transform-origin: bottom center;
+            }
+        }
+    }
+}
+
+
+.dropdown-menu.show {
+    background: $nav-dark;
+    width: 100%;
+    a {
+        color: white;
+        text-align: center;
+    }
+}
+
+.sidebar {
+    background: $nav-dark;
+    color: white;
+    height: 100vh;
+    ul {
+        list-style: none;
+    }
+    &-icons, .folder-group {
+        background: #00000025;
+        border-radius: 20px;
+        display: flex;
+        padding: 4px 12px;
+        span {
+            color: $light-purple;
+        }
+    }
+    &-icons {
+        justify-content: center;
+    }
+    .folder-group {
+        justify-content: space-between;
+    }
 }

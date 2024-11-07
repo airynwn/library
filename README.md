@@ -10,6 +10,11 @@
 
 * Home mockup
 
+**Days 3 - 4**
+
+* SVGs
+* Adding styles and structure
+
 ## TODO
 
 * [ ] `Folder` should be a self-referencing table
