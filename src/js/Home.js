@@ -1,6 +1,6 @@
 import React from 'react';
 import Folder from './Folder.js';
-import { Col, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
+import { Button, Col, Container, Form, Nav, NavDropdown, Row } from 'react-bootstrap';
 import { BookmarkHeartFill, ChevronRight, Filter, FolderFill, Pen, PencilFill, PenFill, Plus, Trash, Trash3Fill, TrashFill, X } from 'react-bootstrap-icons';
 
 function Header() {
@@ -17,7 +17,7 @@ function Header() {
 function Navbar() {
     return (
     <Nav className="navbar text-white">
-      <Container fluid>
+      <Container fluid className="mx-5">
         <Nav.Item>
           <Nav.Link href="">Home</Nav.Link>
         </Nav.Item>
@@ -92,72 +92,38 @@ export default function Home() {
         <Container fluid className='p-0'> 
             {/* <Header /> */}
             <Navbar />
-            <Row className='flex-nowrap flex-column flex-lg-row'>
+            <Row className='flex-nowrap flex-column flex-lg-row m-0'>
               <Sidebar />
-              <Col className='my-5'>
-                <Folder id='1' title='Test' />
-                <Folder id='2' title='Test2' />
-                <Folder id='3' title='Test3' />
-                <Folder id='4' title='Test4' />
-                {/* <Folder id='1' title='Test' />
-                <Folder id='2' title='Test2' />
-                <Folder id='3' title='Test3' />
-                <Folder id='4' title='Test4' />
-                <Folder id='1' title='Test' />
-                <Folder id='2' title='Test2' />
-                <Folder id='3' title='Test3' />
-                <Folder id='4' title='Test4' />
-                <Folder id='1' title='Test' />
-                <Folder id='2' title='Test2' />
-                <Folder id='3' title='Test3' />
-                <Folder id='4' title='Test4' />
-                <Folder id='1' title='Test' />
-                <Folder id='2' title='Test2' />
-                <Folder id='3' title='Test3' />
-                <Folder id='4' title='Test4' /> */}
-              </Col>
-              {/* <Col>
-                <Folder id='1' title='Test' />
-              </Col>
-              <Col>
-                <Folder id='2' title='Test2' />
-              </Col>
-              <Col>
-                <Folder id='3' title='Test3' />
-              </Col>
-              <Col>
-                <Folder id='4' title='Test4' />
-              </Col>
-              <Col>
-                <Folder id='1' title='Test' />
-              </Col>
-              <Col>
-                <Folder id='2' title='Test2' />
-              </Col>
-              <Col>
-                <Folder id='3' title='Test3' />
-              </Col>
-              <Col>
-                <Folder id='4' title='Test4' />
-              </Col>
-              <Col>
-                <Folder id='1' title='Test' />
-              </Col>
-              <Col>
-                <Folder id='2' title='Test2' />
-              </Col>
-              <Col>
-                <Folder id='3' title='Test3' />
-              </Col>
-              <Col>
-                <Folder id='4' title='Test4' />
-              </Col> */}
+              {/* <div className="d-flex flex-column"> */}
+              <Container fluid>
+                <Col className="mx-5 my-5 flex-grow-0">
+                  <Button variant="outline-success">Search</Button>
+                </Col>
+                <Col className='my-5'>
+                  <Folder id='1' title='Test' />
+                  <Folder id='2' title='Test2' />
+                  <Folder id='3' title='Test3' />
+                  <Folder id='4' title='Test4' />
+                  <Folder id='1' title='Test' />
+                  <Folder id='2' title='Test2' />
+                  <Folder id='3' title='Test3' />
+                  <Folder id='4' title='Test4' />
+                  <Folder id='1' title='Test' />
+                  <Folder id='2' title='Test2' />
+                  <Folder id='3' title='Test3' />
+                  <Folder id='4' title='Test4' />
+                  <Folder id='1' title='Test' />
+                  <Folder id='2' title='Test2' />
+                  <Folder id='3' title='Test3' />
+                  <Folder id='4' title='Test4' />
+                  <Folder id='1' title='Test' />
+                  <Folder id='2' title='Test2' />
+                  <Folder id='3' title='Test3' />
+                  <Folder id='4' title='Test4' />
+                </Col>
+              </Container>
+              {/* </div> */}
             </Row>
-            {/* <Row>
-              <Col className="d-flex justify-content-center">
-                <Button variant="outline-primary">Test</Button>{' '}
-              </Col>
-            </Row> */}
         </Container>
     );
 }
