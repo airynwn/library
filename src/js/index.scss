@@ -10,42 +10,38 @@ body {
 }
 
 .icon {
-    width: 96px;
-    height: 96px;
+    width: 6rem;
+    height: 6rem;
 }
 
 .nav {
     background: $nav-dark;
     &-link {
         color: white;
-        &::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            transition: transform 0.25s ease-out;
-            transform-origin: bottom center;
-        }
+        text-decoration: underline transparent;
         &:hover, &:focus {
             color: $light-purple;
-            &::after {
-                transform: scaleX(1);
-                transform-origin: bottom center;
-            }
+            text-decoration: underline $light-purple 2px;
+            text-underline-offset: 0.5rem;
+            transition: all 0.2s;
         }
     }
 }
 
-
-.dropdown-menu.show {
-    background: $nav-dark;
-    width: 100%;
-    a {
-        color: white;
-        text-align: center;
+.dropdown {
+    &-item {
+        &:hover {
+            background-color: transparent;
+        }
+    }
+    &-menu {
+        &.show {
+            background: $nav-dark;
+            a {
+                color: white;
+                text-align: center;
+            }
+        }
     }
 }
 
@@ -58,9 +54,9 @@ body {
     }
     &-icons, .folder-group {
         background: #00000025;
-        border-radius: 20px;
+        border-radius: 1.25rem;
         display: flex;
-        padding: 4px 12px;
+        padding: 0.25rem 0.75rem;
         span {
             color: $light-purple;
         }

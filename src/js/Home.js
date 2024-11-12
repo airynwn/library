@@ -1,11 +1,6 @@
 import React from 'react';
 import Folder from './Folder.js';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Nav from 'react-bootstrap/Nav';
-import Button from 'react-bootstrap/Button';
-import { NavDropdown } from 'react-bootstrap';
+import { Col, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
 import { BookmarkHeartFill, ChevronRight, Filter, FolderFill, Pen, PencilFill, PenFill, Plus, Trash, Trash3Fill, TrashFill, X } from 'react-bootstrap-icons';
 
 function Header() {
@@ -21,23 +16,25 @@ function Header() {
 
 function Navbar() {
     return (
-      <Nav fill defaultActiveKey="/home" className="flex-lg-row">
+    <Nav className="navbar text-white">
+      <Container fluid>
         <Nav.Item>
-        <Nav.Link href="">Home</Nav.Link>
-      </Nav.Item>
-      <NavDropdown title="Manage" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Favorites</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.2">Delete</NavDropdown.Item>
-            </NavDropdown>
-      <Nav.Item>
-        <Nav.Link href="">Customize</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="">
-          Login
-        </Nav.Link>
-      </Nav.Item>
+          <Nav.Link href="">Home</Nav.Link>
+        </Nav.Item>
+        <div className="d-flex">
+        <NavDropdown title="Manage" id="basic-nav-dropdown">
+          <NavDropdown.Item href="">Favorites</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item href="">Delete</NavDropdown.Item>
+        </NavDropdown>
+        <Nav.Item>
+          <Nav.Link href="">Customize</Nav.Link>
+        </Nav.Item>
+        </div>
+        <Nav.Item>
+          <Nav.Link href="">Login</Nav.Link>
+        </Nav.Item>
+      </Container>
     </Nav>
     );
 }
@@ -82,42 +79,6 @@ function Sidebar() {
         </li>
       </ul>
   </Col>
-    {/* <Col className="sidebar">
-      <Container>
-        <Row className="d-flex flex-column">
-          <Col>
-            <img src={'src/svg/chevron-double-right.svg'}/>
-          </Col>
-          <Col>
-            <img src={'src/svg/filter.svg'}/>
-          </Col>
-          <Col>
-            <img src={'src/svg/bookmark-heart-fill.svg'}/>
-          </Col>
-        </Row>
-      </Container>
-    </Col> */}
-    {/* <Col>
-    <div class="container-fluid">
-    <div class="row flex-nowrap flex-column flex-lg-row">
-            <div class="col-3 d-flex flex-lg-column p-3 sidebar sidebar-width">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                  <h4>Portal de administración</h4>
-                </a>
-                <hr/>
-                <ul class="nav nav-pills flex-column mb-auto">
-                  <li class="nav-item">
-                    <a href="" class="nav-link text-white">
-                      Users
-                    </a>
-                  </li>
-                </ul>
-            </div>
-            <div class="col py-3 overflow-y-scroll" id="tabla-container">
-            </div>
-        </div>
-    </div>
-    </Col> */}
     </>
   );
 }
