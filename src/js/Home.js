@@ -70,7 +70,7 @@ function Sidebar() {
               <Trash3Fill className='ms-2' />
             </div>
           </div>
-          <ul>
+          <ul className='my-3'>
             <li>
               <ChevronRight />
               <span className='ms-2'>Folder 1</span>
@@ -94,35 +94,35 @@ export default function Home() {
             <Navbar />
             <Row className='flex-nowrap flex-column flex-lg-row m-0'>
               <Sidebar />
-              {/* <div className="d-flex flex-column"> */}
-              <Container fluid>
-                <Col className="mx-5 my-5 flex-grow-0">
-                  <Button variant="outline-success">Search</Button>
-                </Col>
-                <Col className='my-5'>
-                  <Folder id='1' title='Test' />
-                  <Folder id='2' title='Test2' />
-                  <Folder id='3' title='Test3' />
-                  <Folder id='4' title='Test4' />
-                  <Folder id='1' title='Test' />
-                  <Folder id='2' title='Test2' />
-                  <Folder id='3' title='Test3' />
-                  <Folder id='4' title='Test4' />
-                  <Folder id='1' title='Test' />
-                  <Folder id='2' title='Test2' />
-                  <Folder id='3' title='Test3' />
-                  <Folder id='4' title='Test4' />
-                  <Folder id='1' title='Test' />
-                  <Folder id='2' title='Test2' />
-                  <Folder id='3' title='Test3' />
-                  <Folder id='4' title='Test4' />
-                  <Folder id='1' title='Test' />
-                  <Folder id='2' title='Test2' />
-                  <Folder id='3' title='Test3' />
-                  <Folder id='4' title='Test4' />
-                </Col>
-              </Container>
-              {/* </div> */}
+              <Col className="text-center">
+                <Container fluid>
+                  <Col className="mx-5 my-5 flex-grow-0">
+                    <Button variant="outline-success">Search</Button>
+                  </Col>
+                  <Col className='my-5'>
+                    <Folder id='1' title='Test' />
+                    <Folder id='2' title='Test2' />
+                    <Folder id='3' title='Test3' />
+                    <Folder id='4' title='Test4' />
+                    <Folder id='1' title='Test' />
+                    <Folder id='2' title='Test2' />
+                    <Folder id='3' title='Test3' />
+                    <Folder id='4' title='Test4' />
+                    <Folder id='1' title='Test' />
+                    <Folder id='2' title='Test2' />
+                    <Folder id='3' title='Test3' />
+                    <Folder id='4' title='Test4' />
+                    <Folder id='1' title='Test' />
+                    <Folder id='2' title='Test2' />
+                    <Folder id='3' title='Test3' />
+                    <Folder id='4' title='Test4' />
+                    <Folder id='1' title='Test' />
+                    <Folder id='2' title='Test2' />
+                    <Folder id='3' title='Test3' />
+                    <Folder id='4' title='Test4' />
+                  </Col>
+                </Container>
+              </Col>
             </Row>
         </Container>
     );
