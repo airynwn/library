@@ -66,3 +66,31 @@ CREATE TABLE tag_picture (
                 tag_id bigint NOT NULL REFERENCES tags (id) ON DELETE CASCADE,
                 PRIMARY KEY (picture_id, tag_id)
 );
+
+-- Grant access to owner automatically when creating a new folder
+
+CREATE OR REPLACE FUNCTION insert_access_on_folder_creation()
+RETURNS trigger AS
+$$
+BEGIN
+    INSERT INTO access (folder_id, user_id) 
+    VALUES (NEW.id, NEW.owner_id);
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER insert_access_after_folder_creation
+AFTER INSERT ON folders
+FOR EACH ROW
+EXECUTE FUNCTION insert_access_on_folder_creation();
+
+-- insert test
+
+INSERT INTO users (avatar, name, password) VALUES (NULL, 'testuser', 'test');
+INSERT INTO folders (title, icon, owner_id) VALUES ('testfolder', 'icon_path', 1);
+INSERT INTO contents (text, title, folder_id) VALUES ('This is some text content.', 'Test Content', 1);
+INSERT INTO pictures (file, folder_id) VALUES ('image_file_path', 1);
+INSERT INTO comments (text, picture_id) VALUES ('This is a comment on the picture.', 1);
+INSERT INTO tags (name) VALUES ('tag1');
+INSERT INTO tag_content (content_id, tag_id) VALUES (1, 1);
+INSERT INTO tag_picture (picture_id, tag_id) VALUES (1, 1);
