@@ -7,7 +7,8 @@ const createWindow = () => {
     height: 600
   })
 
-  win.loadFile('index.html')
+  // win.loadFile('index.html')
+  win.loadURL('http://localhost:3000')
 }
 
 if (!app.isPackaged) {

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Folder from './Folder.js';
+
 import { Button, Col, Container, Form, Nav, NavDropdown, Row } from 'react-bootstrap';
 import { BookmarkHeartFill, ChevronRight, Filter, FolderFill, Pen, PencilFill, PenFill, Plus, Trash, Trash3Fill, TrashFill, X } from 'react-bootstrap-icons';
 
@@ -88,42 +89,61 @@ function Sidebar() {
 // --    folder: title, icon, (...), parent_id references folder(id) nullable
 
 export default function Home() {
-    return (
-        <Container fluid className='p-0'> 
-            {/* <Header /> */}
-            <Navbar />
-            <Row className='flex-nowrap flex-column flex-lg-row m-0'>
-              <Sidebar />
-              <Col className="text-center">
-                <Container fluid>
-                  <Col className="mx-5 my-5 flex-grow-0">
-                    <Button variant="outline-success">Search</Button>
-                  </Col>
-                  <Col className='my-5'>
-                    <Folder id='1' title='Test' />
-                    <Folder id='2' title='Test2' />
-                    <Folder id='3' title='Test3' />
-                    <Folder id='4' title='Test4' />
-                    <Folder id='1' title='Test' />
-                    <Folder id='2' title='Test2' />
-                    <Folder id='3' title='Test3' />
-                    <Folder id='4' title='Test4' />
-                    <Folder id='1' title='Test' />
-                    <Folder id='2' title='Test2' />
-                    <Folder id='3' title='Test3' />
-                    <Folder id='4' title='Test4' />
-                    <Folder id='1' title='Test' />
-                    <Folder id='2' title='Test2' />
-                    <Folder id='3' title='Test3' />
-                    <Folder id='4' title='Test4' />
-                    <Folder id='1' title='Test' />
-                    <Folder id='2' title='Test2' />
-                    <Folder id='3' title='Test3' />
-                    <Folder id='4' title='Test4' />
-                  </Col>
-                </Container>
-              </Col>
-            </Row>
-        </Container>
-    );
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/db')
+      .then((response) => response.json())
+      .then((data) => setUsers(data))
+      .catch((error) => console.error('Error:', error));
+  }, []);
+
+  return (
+      <Container fluid className='p-0'> 
+          {/* <Header /> */}
+          <Navbar />
+          <Row className='flex-nowrap flex-column flex-lg-row m-0'>
+            <Sidebar />
+            <Col className="text-center">
+              <Container fluid>
+                <Col className="mx-5 my-5 flex-grow-0">
+                  <Button variant="outline-success">Search</Button>
+                </Col>
+                {/*  */}
+                <div>
+                  <h1>Usuarios</h1>
+                  <ul>
+                    {users.map((user, index) => (
+                      <li key={index}>{user.id} - {user.name} - {user.password}</li>
+                    ))}
+                  </ul>
+                </div>
+                {/*  */}
+                <Col className='my-5'>
+                  <Folder id='1' title='Test' />
+                  <Folder id='2' title='Test2' />
+                  <Folder id='3' title='Test3' />
+                  <Folder id='4' title='Test4' />
+                  <Folder id='1' title='Test' />
+                  <Folder id='2' title='Test2' />
+                  <Folder id='3' title='Test3' />
+                  <Folder id='4' title='Test4' />
+                  <Folder id='1' title='Test' />
+                  <Folder id='2' title='Test2' />
+                  <Folder id='3' title='Test3' />
+                  <Folder id='4' title='Test4' />
+                  <Folder id='1' title='Test' />
+                  <Folder id='2' title='Test2' />
+                  <Folder id='3' title='Test3' />
+                  <Folder id='4' title='Test4' />
+                  <Folder id='1' title='Test' />
+                  <Folder id='2' title='Test2' />
+                  <Folder id='3' title='Test3' />
+                  <Folder id='4' title='Test4' />
+                </Col>
+              </Container>
+            </Col>
+          </Row>
+      </Container>
+  );
 }

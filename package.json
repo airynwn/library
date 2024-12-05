@@ -4,7 +4,11 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
+    "build": "next build",
+    "electron": "electron .",
+    "dev": "next dev",
+    "start": "concurrently \"npm run dev\" \"npm run electron\"",
+    "start-next": "next start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --config webpack.common.js --watch"
   },
@@ -16,6 +20,7 @@
     "@babel/preset-env": "^7.25.3",
     "@babel/preset-react": "^7.24.7",
     "babel-loader": "^9.1.3",
+    "concurrently": "^9.1.0",
     "css-loader": "^7.1.2",
     "electron": "^32.0.1",
     "electron-reload": "^2.0.0-alpha.1",
@@ -28,6 +33,8 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "next": "^15.0.3",
+    "pg": "^8.13.1",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.5",
     "react-bootstrap-icons": "^1.11.4",
