@@ -2,7 +2,7 @@ import { Client } from 'pg';
 
 export default async function handler(req, res) {
   const client = new Client({
-    connectionString: 'postgres://laura:laura@localhost:5432/pro',
+    connectionString: `postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
     // TODO .env
   });
 
