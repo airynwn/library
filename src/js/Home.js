@@ -89,12 +89,22 @@ function Sidebar() {
 // --    folder: title, icon, (...), parent_id references folder(id) nullable
 
 export default function Home() {
-  const [users, setUsers] = useState([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('/api/db')
+    // dynamic parameters
+    const col = '*';
+    const table = 'users'
+    const param = 'id < $1';
+    const values = [10];
+
+    fetch('/api/db', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', },
+      body: JSON.stringify({ col, table, param, values }),
+    })
       .then((response) => response.json())
-      .then((data) => setUsers(data))
+      .then((data) => setData(data))
       .catch((error) => console.error('Error:', error));
   }, []);
 
@@ -113,7 +123,7 @@ export default function Home() {
                 <div>
                   <h1>Usuarios</h1>
                   <ul>
-                    {users.map((user, index) => (
+                    {data.map((user, index) => (
                       <li key={index}>{user.id} - {user.name} - {user.password}</li>
                     ))}
                   </ul>
