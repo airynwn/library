@@ -4,7 +4,6 @@ export default async function handler(req, res) {
   const { col, table, param, values } = req.body;
   const client = new Client({
     connectionString: `postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
-    // TODO .env
   });
 
   await client.connect();

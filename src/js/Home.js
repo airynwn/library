@@ -130,26 +130,7 @@ export default function Home() {
                 </div>
                 {/*  */}
                 <Col className='my-5'>
-                  <Folder id='1' title='Test' />
-                  <Folder id='2' title='Test2' />
-                  <Folder id='3' title='Test3' />
-                  <Folder id='4' title='Test4' />
-                  <Folder id='1' title='Test' />
-                  <Folder id='2' title='Test2' />
-                  <Folder id='3' title='Test3' />
-                  <Folder id='4' title='Test4' />
-                  <Folder id='1' title='Test' />
-                  <Folder id='2' title='Test2' />
-                  <Folder id='3' title='Test3' />
-                  <Folder id='4' title='Test4' />
-                  <Folder id='1' title='Test' />
-                  <Folder id='2' title='Test2' />
-                  <Folder id='3' title='Test3' />
-                  <Folder id='4' title='Test4' />
-                  <Folder id='1' title='Test' />
-                  <Folder id='2' title='Test2' />
-                  <Folder id='3' title='Test3' />
-                  <Folder id='4' title='Test4' />
+                  <Folder />
                 </Col>
               </Container>
             </Col>

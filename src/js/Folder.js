@@ -1,21 +1,20 @@
-import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
 import { Folder2 } from 'react-bootstrap-icons';
+import useFetchData from './UseFetchData';
 
-export default function Folder({id, title}) {
+export default function Folder() {
+    const folders = useFetchData('folders');
+    
     return (
         <>
-         {/* <Container>
-             <Row>
-                 <Col className=" d-flex flex-column align-items-center"> */}
-                 <div className="d-inline-flex flex-column align-items-center mx-5">
-                    {/* <img src={'src/svg/folder.svg'} className="icon" /> */}
-                    <Folder2 className='icon' />
-                    <span>{title}</span>
-                 </div>
-                 {/* </Col>
-             </Row>
-         </Container> */}
+            <div className="d-inline-flex flex-column align-items-center mx-5">
+                {folders.map((folder) => (
+                    <React.Fragment key={folder.id}>
+                        <Folder2 className='icon' />
+                        <span>{folder.title}</span>
+                    </React.Fragment>
+                ))}
+            </div>
         </>
     );
 }
